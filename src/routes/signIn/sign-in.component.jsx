@@ -30,7 +30,6 @@ const SignIn = () => {
 
 const logGoogleRedirectUser = async () => {
   const {user} = await signInWithGoogleRedirect();
-  console.log(user)
 }
 
   return (
@@ -39,11 +38,13 @@ const logGoogleRedirectUser = async () => {
       <button onClick={logGoogleUser}>
         Sign In with Google Popup
       </button>
+      <button onClick={logGoogleRedirectUser}>
+        Sign In with Google Redirect
+      </button>
+      
       <SignUpForm />
 
-      {/* <button onClick={logGoogleRedirectUser}>
-        Sign In with Google Redirect
-      </button> */}
+
     </div>
   )
 }
