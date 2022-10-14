@@ -10,7 +10,7 @@ import {
 
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
 
-const SignIn = () => {
+const Authentication = () => {
 
   useEffect(() => {
  
@@ -49,5 +49,5 @@ const logGoogleRedirectUser = async () => {
   )
 }
 
-export default SignIn;
+export default Authentication;
 
