@@ -38,10 +38,10 @@ const logGoogleRedirectUser = async () => {
       <button onClick={logGoogleUser}>
         Sign In with Google Popup
       </button>
-      <button onClick={logGoogleRedirectUser}>
+      {/* <button onClick={logGoogleRedirectUser}>
         Sign In with Google Redirect
-      </button>
-      
+      </button> */}
+
       <SignUpForm />
 
 
