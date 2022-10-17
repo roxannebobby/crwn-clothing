@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import FormInput from '../form-input/form-input.component'
 import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from '../../utils/firebase/firebase.utils';
 
 const defaultFormFields = {
@@ -27,7 +28,7 @@ const SignUpForm = () => {
     try{
       const { user } = await createAuthUserWithEmailAndPassword(email, password);
     
-        await createUserDocumentFromAuth(user, [displayName]);
+        await createUserDocumentFromAuth(user, {displayName});
         resetFormFields();
 
 
@@ -36,7 +37,7 @@ const SignUpForm = () => {
         alert('Cannot create user. Email already in use.')
       }
       else {
-      console.log('user creation encountered an error', error)
+      console.log('User creation encountered an error', error)
     }}
 
   }
@@ -53,32 +54,32 @@ const SignUpForm = () => {
 
       <form onSubmit = {handleSubmit}>
       
-        <label>Name</label>
-        <input 
+        <FormInput 
+          label='Display Name'
           type='text' 
           required 
           onChange={handleChange} 
           name='displayName' 
           value={displayName} />
 
-        <label>Email</label>
-        <input 
+        <FormInput 
+          label='Email'
           type='email' 
           name='email' 
           required 
           onChange={handleChange} 
           value={email} />
 
-        <label>Password</label>
-        <input 
+        <FormInput 
+          label='Password'
           type='password' 
           name='password' 
           required 
           onChange={handleChange}
           value={password} />
 
-        <label>Confirm Password</label>
-        <input 
+        <FormInput
+          label='Confirm Password' 
           type='password' 
           name='confirmPassword' 
           required 
