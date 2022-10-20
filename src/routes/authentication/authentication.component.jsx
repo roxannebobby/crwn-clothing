@@ -10,7 +10,7 @@ import {
 
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
 
-const SignIn = () => {
+const Authentication = () => {
 
   useEffect(() => {
  
@@ -38,10 +38,10 @@ const logGoogleRedirectUser = async () => {
       <button onClick={logGoogleUser}>
         Sign In with Google Popup
       </button>
-      <button onClick={logGoogleRedirectUser}>
+      {/* <button onClick={logGoogleRedirectUser}>
         Sign In with Google Redirect
-      </button>
-      
+      </button> */}
+
       <SignUpForm />
 
 
@@ -49,5 +49,5 @@ const logGoogleRedirectUser = async () => {
   )
 }
 
-export default SignIn;
+export default Authentication;
 
