@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
+<<<<<<< HEAD
 import FormInput from '../form-input/form-input.component'
 import Button from '../button/button.component'
+=======
+>>>>>>> parent of d7a2a91 (form input component is set up)
 import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from '../../utils/firebase/firebase.utils';
 import './sign-up-form.styles.scss';
 
@@ -30,7 +33,7 @@ const SignUpForm = () => {
     try{
       const { user } = await createAuthUserWithEmailAndPassword(email, password);
     
-        await createUserDocumentFromAuth(user, {displayName});
+        await createUserDocumentFromAuth(user, [displayName]);
         resetFormFields();
 
 
@@ -39,7 +42,7 @@ const SignUpForm = () => {
         alert('Cannot create user. Email already in use.')
       }
       else {
-      console.log('User creation encountered an error', error)
+      console.log('user creation encountered an error', error)
     }}
 
   }
@@ -57,32 +60,32 @@ const SignUpForm = () => {
 
       <form onSubmit = {handleSubmit}>
       
-        <FormInput 
-          label='Display Name'
+        <label>Name</label>
+        <input 
           type='text' 
           required 
           onChange={handleChange} 
           name='displayName' 
           value={displayName} />
 
-        <FormInput 
-          label='Email'
+        <label>Email</label>
+        <input 
           type='email' 
           name='email' 
           required 
           onChange={handleChange} 
           value={email} />
 
-        <FormInput 
-          label='Password'
+        <label>Password</label>
+        <input 
           type='password' 
           name='password' 
           required 
           onChange={handleChange}
           value={password} />
 
-        <FormInput
-          label='Confirm Password' 
+        <label>Confirm Password</label>
+        <input 
           type='password' 
           name='confirmPassword' 
           required 
